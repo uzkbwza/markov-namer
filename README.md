@@ -1,9 +1,12 @@
 
 # markov-name-generator
 **How to use:**
+
 Clone and enter the cargo project with this command:
 
 `git clone https://github.com/uzkbwza/markov-name-generator.git && cd markov-name-generator`
+
+You'll need cargo to build.
 
 First, fill out the input.txt file with your own names for the program to derive from. Example of an input file (included in repo):
 ```
