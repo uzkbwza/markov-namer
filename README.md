@@ -28,7 +28,7 @@ To generate results run the sub-command:
 
 For example,`cargo run generate 1000 -n 2 -l 19` will generate 1000 results with an ngram size of 2 chars, and a minimum length of 10 chars.
 
-Running that will populate the `output.txt` file. You can see the results by peeking in there, or can get any random ones using `get <COUNT>`
+Running that will populate the `output.txt` file. You can see the results by peeking in there, or can print any random ones using `get <COUNT>`
 
 Running `cargo run get 5` gives us these alternate-reality U.S. presidents:
 
