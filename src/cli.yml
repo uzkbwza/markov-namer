@@ -1,0 +1,33 @@
+name: Markov Chain Name Generator
+version: "0.1"
+author: Ian Sly <iansly@protonmail.com>
+about: Generates names from input text
+subcommands:
+    - generate:
+        about: Generate from input file
+        args:
+          - COUNT:
+              index: 1
+              required: true
+
+          - n:
+              short: n
+              long: ngram_size
+              help: Sets size of n-grams
+              takes_value: true
+              required: true
+
+          - min_length:
+              short: l
+              takes_value: true
+              help: Set smallest possible name to be generated (in chars)
+
+    - get:
+        about: Get names from output.txt
+        args:
+            - COUNT:
+                index: 1
+
+    - quiet:
+          short: q
+          help: doesn't display generation results
