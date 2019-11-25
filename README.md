@@ -26,7 +26,7 @@ To generate results run the sub-command:
 - `ngram_size` determines exactly how big a sequence of chars will be for the Markov chain will recognize to be a unique unit. Higher values will lead to more coherent, but less interesting results. A value of 1 will result in a lot of variance, but it will be complete gibberish. 3 will tend to just shuffle around first- and last-names. I personally use 2, because it seems to be the best middle ground.
 - `min_length` is the shortest length a generated result will be.
 
-For example,`cargo run generate 1000 -n 2 -l 19` will generate 1000 results with an ngram size of 2 chars, and a minimum length of 10 chars.
+For example,`cargo run generate 1000 -n 2 -l 10` will generate 1000 results with an ngram size of 2 chars, and a minimum length of 10 chars.
 
 Running that will populate the `output.txt` file. You can see the results by peeking in there, or can print any random ones using `get <COUNT>`
 
