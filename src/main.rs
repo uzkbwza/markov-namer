@@ -6,7 +6,7 @@ use std::io::{BufRead};
 use std::collections::HashMap;
 use rand::prelude::*;
 use std::path;
-use clap::App;
+use clap::{App, AppSettings};
 use fs::File;
 use fs::OpenOptions;
 use io::Write;
@@ -16,7 +16,9 @@ use path::Path;
 
 fn main() {
     let yaml = load_yaml!("cli.yml");
-    let matches = App::from_yaml(yaml).get_matches();
+    let matches = App::from_yaml(yaml)
+        .setting(AppSettings::ArgRequiredElseHelp)
+        .get_matches();
 
     if let Some(matches) = matches.subcommand_matches("generate") {
         let count: usize = matches.value_of("COUNT")

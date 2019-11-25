@@ -4,7 +4,7 @@ author: Ian Sly <iansly@protonmail.com>
 about: Generates names from input text
 subcommands:
     - generate:
-        about: Generate from input file
+        about: Generate from input.txt
         args:
           - COUNT:
               index: 1
@@ -27,7 +27,3 @@ subcommands:
         args:
             - COUNT:
                 index: 1
-
-    - quiet:
-          short: q
-          help: doesn't display generation results
