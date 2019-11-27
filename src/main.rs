@@ -4,6 +4,7 @@ use std::fs;
 use std::io;
 use std::io::{BufRead};
 use std::collections::HashMap;
+use std::collections::HashSet;
 use rand::prelude::*;
 use std::path;
 use clap::{App, AppSettings};
@@ -93,25 +94,15 @@ impl<'a> Markov<'a> {
         }
     }
 
-    pub fn generate_many_new(&self, num_results: usize, write: bool) -> Vec<String> {
+    pub fn generate_many_new(&self, num_results: usize, write: bool) -> HashSet<String> {
 
-        let mut results = Vec::new();
+        let mut results = HashSet::new();
         println!("Generating...");
-        for _ in 0..num_results {
-            let new_name = self.generate();
-            results.push(new_name);
-        }
-
-        println!("Removing duplicates...");
-        results.sort();
-        results.dedup();
-
         while results.len() < num_results {
-            results.append(&mut self.generate_many_new( num_results - results.len(), false));
-            results.sort();
-            results.dedup();
+            let new_name = self.generate();
+            results.insert(new_name);
         }
-
+        
         if write {
             let mut file = OpenOptions::new()
                 .write(true)
